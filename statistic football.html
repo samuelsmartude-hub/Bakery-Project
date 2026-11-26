@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>My Statistic Website</title>
+    <script src="https//cdn.jsdeliver.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: white; text-align: center; font-family: Arial;
+        }
+        h1 {color:blue;}
+        .box {
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 15px;
+            display:inline-block;
+            width: 150px;
+        }
+        
+        .box h2 {margin: 0; font-size: 35px; color: green;}
+</style>
+</head>
+<body>
+    
+    <h1>My football Statistics</h1>
+    <!--Big numbers on top-->
+    <div class="box"><h2>50</h2><p>Goals</p></div>
+    <div class="box"><h2>20</h2><p>matches</p></div>
+    <div class="box"><h2>15</h2><p>wins</p></div>
+
+    <!--Chart-->
+    <canvas id="my chart" style="max-width: 600px; margin: auto;"></canvas>
+
+<script>
+    const ctx=document.getElementById('mychart');
+    new chart(ctx, {
+        type:'bar',
+        data: {
+            labels: ['january', 'February', 'Macrh', 'April'],
+            datasets:[{
+                label:'goals scored',
+                data:[10,15,8,17],
+                backgroundcolor:'blue'
+            }]
+        }
+    })
+    </script>
+    
+</body>
+</html>
